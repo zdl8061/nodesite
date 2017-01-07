@@ -12,6 +12,10 @@ const logger = require('koa-logger');
 const index = require('./routes/index');
 const users = require('./routes/users');
 
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('127.0.0.1:27017/nodetest1');
+
 // middlewares
 app.use(convert(bodyparser));
 app.use(convert(json()));
